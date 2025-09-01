@@ -20,7 +20,7 @@ export default function ModernAboutSection() {
           animateCounters();
         }
       },
-      { threshold: 0.3 },
+      { threshold: 0.3 }
     );
 
     const element = document.getElementById("about");
@@ -56,11 +56,14 @@ export default function ModernAboutSection() {
     "ERP Implementation",
     "Data Strategy",
     "Process Optimization",
-    "Stakeholder Management"
+    "Stakeholder Management",
   ];
 
   return (
-    <section id="about" className="py-20 relative overflow-hidden bg-gradient-to-b from-slate-900 via-gray-900 to-slate-900">
+    <section
+      id="about"
+      className="py-20 relative overflow-hidden bg-gradient-to-b from-slate-900 via-gray-900 to-slate-900"
+    >
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-10 right-10 w-64 h-64 bg-gradient-to-r from-emerald-400/10 to-cyan-400/10 rounded-full blur-3xl"></div>
@@ -72,23 +75,33 @@ export default function ModernAboutSection() {
           {/* Header */}
           <div
             className={`text-center mb-16 transition-all duration-1000 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-8"
             }`}
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-emerald-500/20 to-cyan-500/20 border border-emerald-500/30 backdrop-blur-sm mb-6">
               <Target className="w-4 h-4 text-emerald-400" />
-              <span className="text-emerald-300 text-sm font-medium">Get to Know Me</span>
+              <span className="text-emerald-300 text-sm font-medium">
+                Get to Know Me
+              </span>
             </div>
-            
-            <h2 className="font-bold text-4xl md:text-5xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-100 to-gray-300 mb-6">
+
+            <h2 className="font-philosopher text-4xl md:text-5xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-100 to-gray-300 mb-6">
               About Me
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full mx-auto mb-8"></div>
-            
+
             <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 font-semibold">Mahabub Jamil Showvik</span>, a Business Analyst with expertise in ERP, HRM, AI-driven projects, and digital
-              transformation. With proven experience in gap analysis, product management, and client engagement, I
-              specialize in translating complex business needs into actionable, technology-driven solutions.
+              I'm{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 font-semibold">
+                Mahabub Jamil
+              </span>
+              , a Business Analyst with expertise in ERP, HRM, AI-driven
+              projects, and digital transformation. With proven experience in
+              gap analysis, product management, and client engagement, I
+              specialize in translating complex business needs into actionable,
+              technology-driven solutions.
             </p>
           </div>
 
@@ -96,7 +109,9 @@ export default function ModernAboutSection() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             <div
               className={`group relative p-8 rounded-3xl bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-lg border border-white/10 hover:border-emerald-500/30 transition-all duration-500 hover:scale-105 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-8"
               }`}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-cyan-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -107,16 +122,22 @@ export default function ModernAboutSection() {
                 <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 mb-3">
                   {counters.years}+
                 </div>
-                <div className="text-gray-300 font-medium text-lg">Years Experience</div>
-                <div className="text-gray-400 text-sm mt-2">In business analysis & strategy</div>
+                <div className="text-gray-300 font-medium text-lg">
+                  Years Experience
+                </div>
+                <div className="text-gray-400 text-sm mt-2">
+                  In business analysis & strategy
+                </div>
               </div>
             </div>
 
             <div
               className={`group relative p-8 rounded-3xl bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-lg border border-white/10 hover:border-orange-500/30 transition-all duration-500 hover:scale-105 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-8"
               }`}
-              style={{ animationDelay: '200ms' }}
+              style={{ animationDelay: "200ms" }}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-rose-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative">
@@ -126,16 +147,22 @@ export default function ModernAboutSection() {
                 <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-rose-400 mb-3">
                   {counters.projects}+
                 </div>
-                <div className="text-gray-300 font-medium text-lg">Projects Completed</div>
-                <div className="text-gray-400 text-sm mt-2">Across multiple industries</div>
+                <div className="text-gray-300 font-medium text-lg">
+                  Projects Completed
+                </div>
+                <div className="text-gray-400 text-sm mt-2">
+                  Across multiple industries
+                </div>
               </div>
             </div>
 
             <div
               className={`group relative p-8 rounded-3xl bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-lg border border-white/10 hover:border-violet-500/30 transition-all duration-500 hover:scale-105 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-8"
               }`}
-              style={{ animationDelay: '400ms' }}
+              style={{ animationDelay: "400ms" }}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-violet-500/5 to-purple-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative">
@@ -145,8 +172,12 @@ export default function ModernAboutSection() {
                 <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-purple-400 mb-3">
                   {counters.industries}+
                 </div>
-                <div className="text-gray-300 font-medium text-lg">Industries Served</div>
-                <div className="text-gray-400 text-sm mt-2">From fintech to healthcare</div>
+                <div className="text-gray-300 font-medium text-lg">
+                  Industries Served
+                </div>
+                <div className="text-gray-400 text-sm mt-2">
+                  From fintech to healthcare
+                </div>
               </div>
             </div>
           </div>
@@ -154,16 +185,19 @@ export default function ModernAboutSection() {
           {/* Skills Section */}
           <div
             className={`transition-all duration-1000 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-8"
             }`}
-            style={{ animationDelay: '600ms' }}
+            style={{ animationDelay: "600ms" }}
           >
             <div className="text-center mb-12">
               <h3 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-cyan-300 mb-4">
                 Core Expertise
               </h3>
               <p className="text-gray-400 max-w-2xl mx-auto">
-                Specialized skills that drive business transformation and strategic growth
+                Specialized skills that drive business transformation and
+                strategic growth
               </p>
             </div>
 
@@ -189,21 +223,32 @@ export default function ModernAboutSection() {
           {/* Call to Action */}
           <div
             className={`text-center mt-16 transition-all duration-1000 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-8"
             }`}
-            style={{ animationDelay: '1200ms' }}
+            style={{ animationDelay: "1200ms" }}
           >
             <div className="inline-flex items-center gap-4 p-6 rounded-3xl bg-gradient-to-r from-white/5 to-white/10 backdrop-blur-lg border border-white/10">
               <div className="text-left">
-                <h4 className="text-xl font-semibold text-white mb-2">Ready to collaborate?</h4>
-                <p className="text-gray-400">Let's discuss how I can help transform your business</p>
+                <h4 className="text-xl font-semibold text-white mb-2">
+                  Ready to collaborate?
+                </h4>
+                <p className="text-gray-400">
+                  Let's discuss how I can help transform your business
+                </p>
               </div>
-              <button className="group px-6 py-3 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-2xl font-semibold text-white hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/25">
+              <a
+                href="https://www.linkedin.com/in/mahabub-jamil-91b974219/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group px-6 py-3 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-2xl font-semibold text-white hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/25 inline-block"
+              >
                 <div className="flex items-center gap-2">
                   Get In Touch
                   <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
                 </div>
-              </button>
+              </a>
             </div>
           </div>
         </div>

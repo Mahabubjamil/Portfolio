@@ -41,9 +41,9 @@ export default function ModernGlassHeader() {
           <div className="group cursor-pointer">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-400 to-cyan-400 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                <span className="text-white font-bold text-lg">MJ</span>
+                <span className="text-white font-bold text-lg font-philosopher">MJ</span>
               </div>
-              <span className="font-bold text-xl text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300 group-hover:from-emerald-300 group-hover:to-cyan-300 transition-all duration-300">
+              <span className="font-philosopher text-2xl text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300 group-hover:from-emerald-300 group-hover:to-cyan-300 transition-all duration-300">
                 Mahabub
               </span>
             </div>

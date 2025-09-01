@@ -1,4 +1,48 @@
 @import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #ffffff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-urbanist: var(--font-urbanist);
+  --font-philosopher: var(--font-philosopher);
+  --font-poppins: var(--font-poppins);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ffffff;
+    --foreground: #ededed;
+  }
+}
+
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Urbanist', 'Philosopher', 'Poppins', sans-serif;
+}
+
+/* Define utility classes for the fonts for next-font */
+
+
+.font-philosopher {
+  font-family: var(--font-philosopher);
+}
+
+.font-poppins {
+  font-family: var(--font-poppins);
+}
+
+;
+
+
+
+@import "tailwindcss";
 @import "tw-animate-css";
 
 html {

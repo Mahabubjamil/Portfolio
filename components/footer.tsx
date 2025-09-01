@@ -74,7 +74,7 @@ export function Footer() {
               {/* Brand & Description */}
               <div className="lg:col-span-2 space-y-6">
                 <div>
-                  <h3 className="font-bold text-3xl mb-4">
+                  <h3 className="font-philosopher text-3xl mb-4">
                     <span className="text-white">Mahabub Jamil </span>
                     <span className="bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">Showvik</span>
                   </h3>

@@ -8,7 +8,7 @@ import image from "../public/images/hero-professional.jpeg";
 export default function ModernHeroSection() {
   const [isVisible, setIsVisible] = useState(false);
   const [typewriterText, setTypewriterText] = useState("");
-  const fullText = "Business Analyst";
+  const fullText = "Business Analyst ";
 
   useEffect(() => {
     setIsVisible(true);
@@ -64,7 +64,7 @@ export default function ModernHeroSection() {
             </div>
 
             <div className="space-y-4">
-              <h1 className="font-bold text-5xl md:text-6xl lg:text-7xl leading-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-100 to-gray-300">
+              <h1 className="font-bold font-philosopher text-5xl md:text-6xl lg:text-7xl leading-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-100 to-gray-300">
                 {typewriterText}
                 <span className="animate-pulse text-emerald-400">|</span>
               </h1>

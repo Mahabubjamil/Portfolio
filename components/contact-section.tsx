@@ -129,7 +129,7 @@ export function ContactSection() {
             <MessageCircle className="h-4 w-4 text-blue-400" />
             <span className="text-blue-400 text-sm font-medium">Get In Touch</span>
           </div>
-          <h2 className="font-bold text-4xl md:text-5xl text-white mb-6 tracking-tight">
+          <h2 className="font-philosopher text-4xl md:text-5xl text-white mb-6 tracking-tight">
             Let's Build the 
             <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-emerald-400 bg-clip-text text-transparent"> Future Together</span>
           </h2>

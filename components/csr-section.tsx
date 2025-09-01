@@ -75,7 +75,7 @@ export default function ModernCSRSection() {
             <span className="text-emerald-300 text-sm font-medium">Social Impact</span>
           </div>
           
-          <h2 className="font-bold text-4xl md:text-5xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-100 to-gray-300 mb-6">
+          <h2 className="font-philosopher text-4xl md:text-5xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-100 to-gray-300 mb-6">
             CSR – Codeinnovior
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full mx-auto mb-8"></div>
