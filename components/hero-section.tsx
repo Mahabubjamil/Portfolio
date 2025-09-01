@@ -8,7 +8,7 @@ import image from "../public/images/hero-professional.jpeg";
 export default function ModernHeroSection() {
   const [isVisible, setIsVisible] = useState(false);
   const [typewriterText, setTypewriterText] = useState("");
-  const fullText = "Business Analyst & Strategist";
+  const fullText = "Business Analyst";
 
   useEffect(() => {
     setIsVisible(true);
@@ -115,20 +115,18 @@ export default function ModernHeroSection() {
                 </div>
               </button>
 
-              
               <a
-  href="https://drive.google.com/file/d/1Oa_zxc5N8cutpX0KUMzKQkGqKybrFiYi/view?usp=drive_link"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  <button className="group px-8 py-4 rounded-2xl font-semibold text-gray-300 border-2 border-gray-600/50 backdrop-blur-sm bg-gray-800/30 hover:bg-gray-700/50 hover:border-gray-500/50 transition-all duration-300 hover:scale-105">
-    <div className="flex items-center gap-2">
-      <Download className="w-5 h-5 group-hover:animate-bounce" />
-      Download Resume
-    </div>
-  </button>
-</a>
-
+                href="https://drive.google.com/file/d/1Oa_zxc5N8cutpX0KUMzKQkGqKybrFiYi/view?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="group px-8 py-4 rounded-2xl font-semibold text-gray-300 border-2 border-gray-600/50 backdrop-blur-sm bg-gray-800/30 hover:bg-gray-700/50 hover:border-gray-500/50 transition-all duration-300 hover:scale-105">
+                  <div className="flex items-center gap-2">
+                    <Download className="w-5 h-5 group-hover:animate-bounce" />
+                    Download Resume
+                  </div>
+                </button>
+              </a>
             </div>
           </div>
 

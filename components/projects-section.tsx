@@ -8,13 +8,18 @@ export default function ModernProjectsSection() {
   const [filter, setFilter] = useState("all");
 
   useEffect(() => {
+    if (window.innerWidth < 768) {
+      setIsVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
         }
       },
-      { threshold: 0.2 },
+      { threshold: 0.05, rootMargin: "0px 0px -50px 0px" }
     );
 
     const element = document.getElementById("projects");
@@ -95,11 +100,11 @@ export default function ModernProjectsSection() {
   ];
 
   return (
-    <section id="projects" className="py-20 relative overflow-hidden bg-gradient-to-b from-slate-900 via-gray-900 to-slate-900">
+    <section id="projects" className="py-16 sm:py-20 relative overflow-hidden bg-gradient-to-b from-slate-900 via-gray-900 to-slate-900">
       {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-32 right-32 w-96 h-96 bg-gradient-to-r from-emerald-400/5 to-cyan-400/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-32 left-32 w-96 h-96 bg-gradient-to-r from-violet-400/5 to-purple-400/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 right-10 sm:right-32 w-48 h-48 sm:w-96 sm:h-96 bg-gradient-to-r from-emerald-400/5 to-cyan-400/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-10 sm:left-32 w-48 h-48 sm:w-96 sm:h-96 bg-gradient-to-r from-violet-400/5 to-purple-400/5 rounded-full blur-3xl"></div>
       </div>
 
       {/* Grid Pattern */}
@@ -110,38 +115,39 @@ export default function ModernProjectsSection() {
             linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
             linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)
           `,
-          backgroundSize: '50px 50px'
+          backgroundSize: '40px 40px'
         }}
       ></div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        {/* Section Header */}
         <div
-          className={`text-center mb-16 transition-all duration-1000 ${
+          className={`text-center mb-12 sm:mb-16 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-emerald-500/20 to-cyan-500/20 border border-emerald-500/30 backdrop-blur-sm mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 sm:px-4 sm:py-2 rounded-full bg-gradient-to-r from-emerald-500/20 to-cyan-500/20 border border-emerald-500/30 backdrop-blur-sm mb-4 sm:mb-6">
             <Code className="w-4 h-4 text-emerald-400" />
-            <span className="text-emerald-300 text-sm font-medium">Portfolio Showcase</span>
+            <span className="text-emerald-300 text-xs sm:text-sm font-medium">Portfolio Showcase</span>
           </div>
           
-          <h2 className="font-bold text-4xl md:text-5xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-100 to-gray-300 mb-6">
+          <h2 className="font-bold text-3xl sm:text-4xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-100 to-gray-300 mb-4 sm:mb-6">
             Featured Projects
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full mx-auto mb-8"></div>
+          <div className="w-20 sm:w-24 h-1 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full mx-auto mb-6 sm:mb-8"></div>
           
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-12">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-2xl sm:max-w-3xl mx-auto leading-relaxed mb-8 sm:mb-12 px-2">
             Showcasing innovative solutions across AI, healthcare, climate tech, and enterprise systems 
             with measurable business impact.
           </p>
 
           {/* Filter Buttons */}
-          <div className="inline-flex items-center gap-2 p-2 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 p-2 rounded-xl sm:rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
             {filterOptions.map((option) => (
               <button
                 key={option.value}
                 onClick={() => setFilter(option.value)}
-                className={`flex items-center gap-2 px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
+                className={`flex items-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2 sm:py-3 rounded-lg sm:rounded-xl font-medium text-sm sm:text-base transition-all duration-300 ${
                   filter === option.value
                     ? "bg-gradient-to-r from-emerald-500 to-cyan-500 text-white shadow-lg"
                     : "text-gray-300 hover:text-white hover:bg-white/10"
@@ -155,39 +161,39 @@ export default function ModernProjectsSection() {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
           {filteredProjects.map((project, index) => (
             <div
               key={index}
               className={`group relative transition-all duration-1000 ${
                 isVisible ? `opacity-100 translate-y-0` : "opacity-0 translate-y-8"
-              } ${project.featured ? 'lg:col-span-1 md:col-span-1' : ''}`}
-              style={{ animationDelay: `${400 + index * 100}ms` }}
+              }`}
+              style={{ animationDelay: `${300 + index * 100}ms` }}
             >
-              <div className="relative p-8 rounded-3xl bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-lg border border-white/10 group-hover:border-emerald-500/30 transition-all duration-500 hover:scale-105 hover:shadow-2xl h-full">
+              <div className="relative p-6 sm:p-8 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-lg border border-white/10 group-hover:border-emerald-500/30 transition-all duration-500 hover:scale-105 hover:shadow-2xl h-full">
                 {/* Gradient Overlay on Hover */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient}/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+                <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient}/5 rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
                 
                 {/* Featured Badge */}
                 {project.featured && (
-                  <div className="absolute -top-3 -right-3 px-3 py-1 rounded-full bg-gradient-to-r from-emerald-500 to-cyan-500 text-white text-xs font-medium">
+                  <div className="absolute -top-3 -right-3 px-2 py-0.5 sm:px-3 sm:py-1 rounded-full bg-gradient-to-r from-emerald-500 to-cyan-500 text-white text-[10px] sm:text-xs font-medium">
                     Featured
                   </div>
                 )}
 
-                <div className="relative space-y-6">
+                <div className="relative space-y-4 sm:space-y-6">
                   {/* Header */}
-                  <div className="flex items-start gap-4">
-                    <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${project.gradient} flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300`}>
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-gradient-to-br ${project.gradient} flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300`}>
                       <div className="text-white">
                         {project.icon}
                       </div>
                     </div>
                     <div className="flex-1">
-                      <h3 className="font-bold text-xl text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-emerald-400 group-hover:to-cyan-400 transition-all duration-300 mb-2">
+                      <h3 className="font-bold text-lg sm:text-xl text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-emerald-400 group-hover:to-cyan-400 transition-all duration-300 mb-1.5 sm:mb-2">
                         {project.title}
                       </h3>
-                      <p className="text-gray-400 text-sm leading-relaxed">
+                      <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">
                         {project.description}
                       </p>
                     </div>
@@ -195,15 +201,15 @@ export default function ModernProjectsSection() {
 
                   {/* Tools */}
                   <div>
-                    <div className="flex items-center gap-2 mb-3">
+                    <div className="flex items-center gap-1.5 sm:gap-2 mb-2 sm:mb-3">
                       <Sparkles className="w-4 h-4 text-emerald-400" />
-                      <span className="text-gray-300 font-medium text-sm">Technologies</span>
+                      <span className="text-gray-300 font-medium text-xs sm:text-sm">Technologies</span>
                     </div>
                     <div className="flex flex-wrap gap-2">
                       {project.tools.map((tool, i) => (
                         <div
                           key={i}
-                          className="px-3 py-1 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 text-gray-300 text-sm hover:border-emerald-500/30 hover:text-white transition-all duration-300"
+                          className="px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-md sm:rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 text-gray-300 text-xs sm:text-sm hover:border-emerald-500/30 hover:text-white transition-all duration-300"
                         >
                           {tool}
                         </div>
@@ -213,22 +219,22 @@ export default function ModernProjectsSection() {
 
                   {/* Outcome */}
                   <div>
-                    <div className="flex items-center gap-2 mb-3">
+                    <div className="flex items-center gap-1.5 sm:gap-2 mb-2 sm:mb-3">
                       <CheckCircle className="w-4 h-4 text-cyan-400" />
-                      <span className="text-gray-300 font-medium text-sm">Impact</span>
+                      <span className="text-gray-300 font-medium text-xs sm:text-sm">Impact</span>
                     </div>
-                    <p className="text-white text-sm leading-relaxed bg-white/5 p-4 rounded-xl border border-white/10">
+                    <p className="text-white text-xs sm:text-sm leading-relaxed bg-white/5 p-3 sm:p-4 rounded-lg sm:rounded-xl border border-white/10">
                       {project.outcome}
                     </p>
                   </div>
 
                   {/* Action Button */}
-                  <button className="w-full group/btn mt-6 p-4 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-emerald-500/30 hover:bg-gradient-to-r hover:from-emerald-500/10 hover:to-cyan-500/10 transition-all duration-300">
+                  <button className="w-full group/btn mt-4 sm:mt-6 p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-emerald-500/30 hover:bg-gradient-to-r hover:from-emerald-500/10 hover:to-cyan-500/10 transition-all duration-300">
                     <div className="flex items-center justify-between">
-                      <span className="text-gray-300 group-hover/btn:text-white font-medium transition-colors duration-300">
+                      <span className="text-gray-300 group-hover/btn:text-white font-medium text-sm sm:text-base transition-colors duration-300">
                         View Case Study
                       </span>
-                      <ArrowUpRight className="w-5 h-5 text-emerald-400 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform duration-300" />
+                      <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform duration-300" />
                     </div>
                   </button>
                 </div>
@@ -239,32 +245,32 @@ export default function ModernProjectsSection() {
 
         {/* Bottom Section */}
         <div
-          className={`text-center mt-20 transition-all duration-1000 ${
+          className={`text-center mt-12 sm:mt-20 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
           style={{ animationDelay: '1000ms' }}
         >
-          <div className="max-w-4xl mx-auto p-8 rounded-3xl bg-gradient-to-r from-white/5 to-white/10 backdrop-blur-lg border border-white/10">
-            <div className="flex flex-col md:flex-row items-center gap-8">
-              <div className="flex-1 text-left">
-                <h4 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 mb-3">
+          <div className="max-w-4xl mx-auto p-6 sm:p-8 rounded-2xl sm:rounded-3xl bg-gradient-to-r from-white/5 to-white/10 backdrop-blur-lg border border-white/10">
+            <div className="flex flex-col md:flex-row items-center gap-6 sm:gap-8">
+              <div className="flex-1 text-center md:text-left">
+                <h4 className="text-xl sm:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 mb-2 sm:mb-3">
                   Ready to Start Your Next Project?
                 </h4>
-                <p className="text-gray-300 leading-relaxed">
+                <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
                   Let's collaborate to transform your business challenges into innovative, data-driven solutions 
                   that deliver measurable results.
                 </p>
               </div>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button className="group px-8 py-4 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-2xl font-semibold text-white hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/25">
-                  <div className="flex items-center gap-2">
+              <div className="flex flex-col sm:flex-row w-full sm:w-auto gap-3 sm:gap-4">
+                <button className="group w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-xl sm:rounded-2xl font-semibold text-white hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/25">
+                  <div className="flex items-center justify-center sm:justify-between gap-2">
                     Discuss Project
-                    <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+                    <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
                   </div>
                 </button>
-                <button className="group px-8 py-4 rounded-2xl font-semibold text-gray-300 border-2 border-gray-600/50 backdrop-blur-sm bg-gray-800/30 hover:bg-gray-700/50 hover:border-emerald-500/50 transition-all duration-300 hover:scale-105">
-                  <div className="flex items-center gap-2">
-                    <ExternalLink className="w-5 h-5 group-hover:animate-pulse" />
+                <button className="group w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold text-gray-300 border-2 border-gray-600/50 backdrop-blur-sm bg-gray-800/30 hover:bg-gray-700/50 hover:border-emerald-500/50 transition-all duration-300 hover:scale-105">
+                  <div className="flex items-center justify-center sm:justify-between gap-2">
+                    <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 group-hover:animate-pulse" />
                     View All Work
                   </div>
                 </button>

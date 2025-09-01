@@ -186,7 +186,7 @@ export function Footer() {
                   <a href="mailto:Sgowvik6646@gmail.com" className="w-8 h-8 bg-white/5 border border-slate-700/50 rounded-lg flex items-center justify-center text-slate-400 hover:text-blue-400 hover:border-blue-500/50 transition-all duration-200">
                     <Mail className="h-4 w-4" />
                   </a>
-                  <a href="#" className="w-8 h-8 bg-white/5 border border-slate-700/50 rounded-lg flex items-center justify-center text-slate-400 hover:text-blue-400 hover:border-blue-500/50 transition-all duration-200">
+                  <a href="https://www.linkedin.com/in/mahabub-jamil-91b974219/" className="w-8 h-8 bg-white/5 border border-slate-700/50 rounded-lg flex items-center justify-center text-slate-400 hover:text-blue-400 hover:border-blue-500/50 transition-all duration-200">
                     <Linkedin className="h-4 w-4" />
                   </a>
                 </div>
